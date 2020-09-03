@@ -1,0 +1,88 @@
+<div class="container">
+    <h4>SpaceX Launch Programs</h4>
+    <div class="row">
+        <div class="col-sm-2">
+          <b>Filters</b>
+          <table class="table table-strip">
+              <tr>
+                  <td align="center">
+                      Launch Year
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td align="center"><input type="button" value="2006" (click)="getByYears(2006)" [ngClass]="(launchYear == 2006)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="2007" (click)="getByYears(2007)" [ngClass]="(launchYear == 2007)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="2008" (click)="getByYears(2008)" [ngClass]="(launchYear == 2008)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="2009" (click)="getByYears(2009)" [ngClass]="(launchYear == 2009)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="2010" (click)="getByYears(2010)" [ngClass]="(launchYear == 2010)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="2011" (click)="getByYears(2011)" [ngClass]="(launchYear == 2011)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="2012" (click)="getByYears(2012)" [ngClass]="(launchYear == 2012)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="2013" (click)="getByYears(2013)" [ngClass]="(launchYear == 2013)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="2014" (click)="getByYears(2014)" [ngClass]="(launchYear == 2014)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="2015" (click)="getByYears(2015)" [ngClass]="(launchYear == 2015)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="2016" (click)="getByYears(2016)" [ngClass]="(launchYear == 2016)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="2017" (click)="getByYears(2017)" [ngClass]="(launchYear == 2017)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="2018" (click)="getByYears(2018)" [ngClass]="(launchYear == 2018)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="2019" (click)="getByYears(2019)" [ngClass]="(launchYear == 2019)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="2020" (click)="getByYears(2020)" [ngClass]="(launchYear == 2020)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">Successfull Launch</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="True" (click)="getBySuccessLaunch(true)" [ngClass]="(successlaunch)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="False" (click)="getBySuccessLaunch(false)" [ngClass]="(!successlaunch)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                        <tr>
+                            <td align="center" colspan="2">Successfull Landing</td>
+                        </tr>
+                        <tr>
+                            <td align="center"><input type="button" value="True" (click)="getBySuccessLanding(true)" [ngClass]="(successLand)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                            <td align="center"><input type="button" value="False" (click)="getBySuccessLanding(false)" [ngClass]="(!successLand)?'btn btn-warning btn-sm':'btn btn-success btn-sm'"></td>
+                        </tr>
+                    </table>
+                  </td>
+              </tr>
+              
+          </table>
+        </div>
+        <div class="col-sm-10">
+            
+                <div class="row" > 
+                    <div class="col-lg-3" *ngFor="let l of launches; let i=index;">
+                        <div class="card" >
+                            <img src="{{ launches[i].links.mission_patch }}" class="card-img-top" alt="">
+                            <div class="card-body">
+                              <h6 class="card-title">{{ launches[i].mission_name }} #{{ launches[i].flight_number}}</h6>
+                              <p class="card-text">
+                                  <b>Mission Ids:</b>
+                                  {{ launches[i].mission_name }}
+                                  <b>Launch Year:</b>{{launches[i].launch_year}}
+                                 <b>Successfull Launch</b>{{launches[i].launch_success}}
+                                 <b>Successfull Landing</b>{{launches[i].launch_landing}}
+                              </p>
+                            </div>
+                          </div>
+                    </div>
+            </div>
+        </div>
+        
+      </div>
+</div>

@@ -1,0 +1,13 @@
+.container{
+    background-color: lightgrey;
+    border-radius: 5px;
+    box-shadow: lightslategray;
+}
+
+.card-img-top{
+    background-color: lightslategray;
+}
+
+.card-title{
+    color: blue;
+}
